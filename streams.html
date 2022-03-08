@@ -43,6 +43,7 @@ Currently, there are four supported implementations <em>(one for each effect typ
 <h4 id="with-catseffectio">With cats.effect.IO</h4>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">cats.effect.</span><span class="o">{</span><span class="nc">IO</span><span class="o">,</span> <span class="nc">Resource</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">cats.effect.unsafe.implicits.global</span>
 <span class="k">import</span> <span class="nn">fs2.Stream</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">StreamingDriver</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.cats.effect.implicits._</span> <span class="c1">// Brings the implicit Async[IO] instance into the scope. // Brings the implicit Async[IO] instance into the scope.</span>
@@ -50,9 +51,6 @@ Currently, there are four supported implementations <em>(one for each effect typ
 <span class="k">import</span> <span class="nn">neotypes.fs2.implicits._</span> <span class="c1">// Brings the implicit Stream[Fs2IOStream] instance into the scope. // Brings the implicit Stream[Fs2IOStream] instance into the scope.</span>
 <span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
 <span class="k">import</span> <span class="nn">org.neo4j.driver.AuthTokens</span>
-
-<span class="k">implicit</span> <span class="k">val</span> <span class="nv">cs</span> <span class="k">=</span>
-  <span class="nv">IO</span><span class="o">.</span><span class="py">contextShift</span><span class="o">(</span><span class="nv">scala</span><span class="o">.</span><span class="py">concurrent</span><span class="o">.</span><span class="py">ExecutionContext</span><span class="o">.</span><span class="py">global</span><span class="o">)</span>
 
 <span class="k">val</span> <span class="nv">driver</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">StreamingDriver</span><span class="o">[</span><span class="kt">Fs2IoStream</span>, <span class="kt">IO</span><span class="o">]]</span> <span class="k">=</span>
   <span class="nv">GraphDatabase</span><span class="o">.</span><span class="py">streamingDriver</span><span class="o">[</span><span class="kt">Fs2IoStream</span><span class="o">](</span><span class="s">"bolt://localhost:7687"</span><span class="o">,</span> <span class="nv">AuthTokens</span><span class="o">.</span><span class="py">basic</span><span class="o">(</span><span class="s">"neo4j"</span><span class="o">,</span> <span class="s">"****"</span><span class="o">))</span>
@@ -81,10 +79,10 @@ And replacing the <code class="highlighter-rouge">neotypes.fs2.Fs2IoStream</code
 <span class="k">import</span> <span class="nn">monix.execution.Scheduler.Implicits.global</span>
 <span class="k">import</span> <span class="nn">monix.reactive.Observable</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">StreamingDriver</span><span class="o">}</span>
-<span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
-<span class="k">import</span> <span class="nn">neotypes.monix.implicits._</span> <span class="c1">// Brings the implicit Async[Task] instance into the scope. // Brings the implicit Async[Task] instance into the scope.</span>
+<span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method.</span>
+<span class="k">import</span> <span class="nn">neotypes.monix.implicits._</span> <span class="c1">// Brings the implicit Async[Task] instance into the scope.</span>
 <span class="k">import</span> <span class="nn">neotypes.monix.stream.MonixStream</span>
-<span class="k">import</span> <span class="nn">neotypes.monix.stream.implicits._</span> <span class="c1">// Brings the implicit Stream[MonixStream] instance into the scope. // Brings the implicit Stream[MonixStream] instance into the scope.</span>
+<span class="k">import</span> <span class="nn">neotypes.monix.stream.implicits._</span> <span class="c1">// Brings the implicit Stream[MonixStream] instance into the scope.</span>
 <span class="k">import</span> <span class="nn">org.neo4j.driver.AuthTokens</span>
 <span class="k">import</span> <span class="nn">scala.concurrent.duration._</span>
 

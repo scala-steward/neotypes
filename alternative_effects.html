@@ -28,6 +28,7 @@
 <h3 id="catseffectio-neotypes-cats-effect">cats.effect.IO <em>(neotypes-cats-effect)</em></h3>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">cats.effect.</span><span class="o">{</span><span class="nc">IO</span><span class="o">,</span> <span class="nc">Resource</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">cats.effect.unsafe.implicits.global</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">Driver</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.cats.effect.implicits._</span> <span class="c1">// Brings the implicit neotypes.Async[IO] instance into the scope. // Brings the implicit neotypes.Async[IO] instance into the scope.</span>
 <span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
@@ -46,6 +47,7 @@
 <h3 id="catseffectneotypesasyncf-neotypes-cats-effect">cats.effect.neotypes.Async[F] <em>(neotypes-cats-effect)</em></h3>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">cats.effect.</span><span class="o">{</span><span class="nc">Async</span><span class="o">,</span> <span class="nc">IO</span><span class="o">,</span> <span class="nc">Resource</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">cats.effect.unsafe.implicits.global</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">Driver</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.cats.effect.implicits._</span> <span class="c1">// Brings the implicit neotypes.Async[IO] instance into the scope. // Brings the implicit neotypes.Async[IO] instance into the scope.</span>
 <span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
@@ -67,9 +69,9 @@
 <span class="k">import</span> <span class="nn">monix.eval.Task</span>
 <span class="k">import</span> <span class="nn">monix.execution.Scheduler.Implicits.global</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">Driver</span><span class="o">}</span>
-<span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
-<span class="k">import</span> <span class="nn">neotypes.monix.implicits._</span> <span class="c1">// Brings the implicit neotypes.Async[Task] instance into the scope. // Brings the implicit neotypes.Async[Task] instance into the scope.</span>
-<span class="k">import</span> <span class="nn">scala.concurrent.duration._</span> <span class="c1">// Provides the second extension method. // Provides the second extension method.</span>
+<span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method.</span>
+<span class="k">import</span> <span class="nn">neotypes.monix.implicits._</span> <span class="c1">// Brings the implicit neotypes.Async[Task] instance into the scope.</span>
+<span class="k">import</span> <span class="nn">scala.concurrent.duration._</span> <span class="c1">// Provides the second extension method.</span>
 <span class="k">import</span> <span class="nn">org.neo4j.driver.AuthTokens</span>
 
 <span class="k">val</span> <span class="nv">driver</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">Task</span>, <span class="kt">Driver</span><span class="o">[</span><span class="kt">Task</span><span class="o">]]</span> <span class="k">=</span>
