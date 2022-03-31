@@ -3,22 +3,18 @@
 <p><strong>neotypes</strong> leverages <a href="https://docs.scala-lang.org/overviews/core/string-interpolation.html">StringContext</a> for interpolating query parameters.
 And uses the <code class="highlighter-rouge">ParameterMapper</code> typeclass to ensure typesafety.</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope.</span>
-</code></pre></div></div>
-
 <p>Which can be used like this:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"John"</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope. // Adds the `c` interpolator into the scope.</span>
+
+<span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"John"</span>
 <span class="c1">// name: String = "John"</span>
-<span class="k">val</span> <span class="nv">query</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: Test { name: $name })"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
-<span class="c1">// query: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
+<span class="n">c</span><span class="s">"CREATE (a: Test { name: ${name} })"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
+<span class="c1">// res1: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: Test { name: $p1 })",</span>
 <span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b),</span>
 <span class="c1">//   List(24)</span>
 <span class="c1">// )</span>
-
-<span class="nf">assert</span><span class="o">(</span><span class="nv">query</span><span class="o">.</span><span class="py">query</span> <span class="o">==</span> <span class="s">"CREATE (a: Test { name: $p1 })"</span><span class="o">)</span>
-<span class="nf">assert</span><span class="o">(</span><span class="nv">query</span><span class="o">.</span><span class="py">params</span> <span class="o">==</span> <span class="nc">Map</span><span class="o">(</span><span class="s">"p1"</span> <span class="o">-&gt;</span> <span class="nv">neotypes</span><span class="o">.</span><span class="py">types</span><span class="o">.</span><span class="py">QueryParam</span><span class="o">(</span><span class="s">"John"</span><span class="o">)))</span>
 </code></pre></div></div>
 
 <p>All parameters will be converted to neo4j supported types <em>(please see <a href="types">Supported types</a>)</em>.</p>
@@ -26,14 +22,18 @@ And uses the <code class="highlighter-rouge">ParameterMapper</code> typeclass to
 <p>The <code class="highlighter-rouge">c</code> interpolator creates a <code class="highlighter-rouge">DeferredQueryBuilder</code> which is an immutable representation of a cypher query.
 You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s with other <code class="highlighter-rouge">DeferredQueryBuilder</code>s or <code class="highlighter-rouge">String</code>s, to build complex queries.</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"John"</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope. // Adds the `c` interpolator into the scope.</span>
+
+<span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"John"</span>
 <span class="c1">// name: String = "John"</span>
 <span class="k">val</span> <span class="nv">born</span> <span class="k">=</span> <span class="mi">1980</span>
 <span class="c1">// born: Int = 1980</span>
-<span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: Test { name: $name, "</span> <span class="o">+</span> <span class="n">c</span><span class="s">"born: $born })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@1f01ce78</span>
+<span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span>
+  <span class="n">c</span><span class="s">"CREATE (a: Test { name: ${name}, "</span> <span class="o">+</span>
+  <span class="n">c</span><span class="s">"born: ${born} })"</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@7965db2a</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
-<span class="c1">// res2: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
+<span class="c1">// res3: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: Test { name: $p1, born: $p2 })",</span>
 <span class="c1">//   Map(</span>
 <span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
@@ -45,18 +45,64 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">LABEL</span> <span class="k">=</span> <span class="s">"User"</span>
 <span class="c1">// LABEL: String = "User"</span>
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: "</span> <span class="o">+</span> <span class="nc">LABEL</span> <span class="o">+</span> <span class="n">c</span><span class="s">"{ name: $name })"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@3b264789</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@7f07c680</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
-<span class="c1">// res3: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
+<span class="c1">// res4: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: User { name: $p1 })",</span>
 <span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b),</span>
 <span class="c1">//   List(24)</span>
 <span class="c1">// )</span>
 </code></pre></div></div>
 
+<p>Alternatively, you can also have plain interpolation by using <code class="highlighter-rouge">#$</code> instead of <code class="highlighter-rouge">$</code></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope. // Adds the `c` interpolator into the scope.</span>
+
+<span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"John"</span>
+<span class="c1">// name: String = "John"</span>
+<span class="k">val</span> <span class="nv">LABEL</span> <span class="k">=</span> <span class="s">"User"</span>
+<span class="c1">// LABEL: String = "User"</span>
+
+<span class="n">c</span><span class="s">"CREATE (a: #${LABEL} { name: ${name} })"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
+<span class="c1">// res6: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
+<span class="c1">//   "CREATE (a: User { name: $p1 })",</span>
+<span class="c1">//   Map("p1" -&gt; neotypes.types$QueryParam@23512b),</span>
+<span class="c1">//   List(24)</span>
+<span class="c1">// )</span>
+</code></pre></div></div>
+
+<p>You may also use triple quotes to split the query in multiple lines:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope. // Adds the `c` interpolator into the scope.</span>
+
+<span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"John"</span>
+<span class="c1">// name: String = "John"</span>
+<span class="k">val</span> <span class="nv">born</span> <span class="k">=</span> <span class="mi">1980</span>
+<span class="c1">// born: Int = 1980</span>
+<span class="k">val</span> <span class="nv">LABEL</span> <span class="k">=</span> <span class="s">"User"</span>
+<span class="c1">// LABEL: String = "User"</span>
+
+<span class="n">c</span><span class="s">"""CREATE (a: #${LABEL} {
+      name: ${name},
+      born: ${born}
+    })"""</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
+<span class="c1">// res8: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
+<span class="c1">//   """CREATE (a: User {</span>
+<span class="c1">//       name: $p1,</span>
+<span class="c1">//       born: $p2</span>
+<span class="c1">//     })""",</span>
+<span class="c1">//   Map(</span>
+<span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
+<span class="c1">//     "p2" -&gt; neotypes.types$QueryParam@7bc</span>
+<span class="c1">//   ),</span>
+<span class="c1">//   List(47, 30)</span>
+<span class="c1">// )</span>
+</code></pre></div></div>
+
 <p>A case class can be used directly in the interpolation:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.generic.auto._</span> <span class="c1">// Provides automatic derivation of ParameterMapper for any case class. // Provides automatic derivation of ParameterMapper for any case class.</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope. // Adds the `c` interpolator into the scope.</span>
+<span class="k">import</span> <span class="nn">neotypes.generic.auto._</span> <span class="c1">// Provides automatic derivation of ParameterMapper for any case class. // Provides automatic derivation of ParameterMapper for any case class.</span>
 
 <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">User</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">born</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
 <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Cat</span><span class="o">(</span><span class="n">tag</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
@@ -70,9 +116,9 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// hasCat: HasCat = HasCat(2010)</span>
 
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@7395520</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@37beec2e</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
-<span class="c1">// res4: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
+<span class="c1">// res10: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })",</span>
 <span class="c1">//   Map(</span>
 <span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
@@ -82,9 +128,9 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })-[r: HAS_CAT { $hasCat }]-&gt;(c: Cat { $cat }) RETURN r"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@3aba5476</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@90c148a</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">HasCat</span><span class="o">]</span>
-<span class="c1">// res5: neotypes.DeferredQuery[HasCat] = DeferredQuery(</span>
+<span class="c1">// res11: neotypes.DeferredQuery[HasCat] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })-[r: HAS_CAT { since: $p3 }]-&gt;(c: Cat { tag: $p4 }) RETURN r",</span>
 <span class="c1">//   Map(</span>
 <span class="c1">//     "p1" -&gt; neotypes.types$QueryParam@23512b,</span>
@@ -94,6 +140,31 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">//   ),</span>
 <span class="c1">//   List(86, 63, 35, 24)</span>
 <span class="c1">// )</span>
+</code></pre></div></div>
+
+<p>A <code class="highlighter-rouge">DeferredQuery</code> can also be interpolated inside another one:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.implicits.syntax.cypher._</span> <span class="c1">// Adds the `c` interpolator into the scope. // Adds the `c` interpolator into the scope.</span>
+
+<span class="c1">// Two sub-queries.</span>
+<span class="k">val</span> <span class="nv">subQuery1Param</span> <span class="k">=</span> <span class="mi">1</span>
+<span class="c1">// subQuery1Param: Int = 1</span>
+<span class="k">val</span> <span class="nv">subQuery1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"user.id = ${subQuery1Param}"</span>
+<span class="c1">// subQuery1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@5ee7320a</span>
+<span class="k">val</span> <span class="nv">subQuery2Param</span> <span class="k">=</span> <span class="s">"Luis"</span>
+<span class="c1">// subQuery2Param: String = "Luis"</span>
+<span class="k">val</span> <span class="nv">subQuery2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"user.name = ${subQuery2Param}"</span>
+<span class="c1">// subQuery2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@1f15dc90</span>
+<span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"MATCH (user: User) WHERE ${subQuery1} OR ${subQuery2} RETURN user"</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@5f8a9cc0</span>
+
+<span class="c1">// Sub.query with a sub-query.</span>
+<span class="k">val</span> <span class="nv">subSubQueryParam</span> <span class="k">=</span> <span class="mi">1</span>
+<span class="c1">// subSubQueryParam: Int = 1</span>
+<span class="k">val</span> <span class="nv">subSubQuery</span> <span class="k">=</span> <span class="n">c</span><span class="s">"user.id = ${subSubQueryParam}"</span>
+<span class="c1">// subSubQuery: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@36cb7bff</span>
+<span class="k">val</span> <span class="nv">subQuery</span> <span class="k">=</span> <span class="n">c</span><span class="s">"""${subSubQuery} OR user.name = "Luis""""</span>
+<span class="c1">// subQuery: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@515b784e</span>
 </code></pre></div></div>
 </div></div></section></main><footer id="site-footer"><div class="container"><div class="row"><div class="col-xs-6"><p>neotypes is designed and developed by <a href="" target="_blank" rel="noopener noreferrer">neotypes</a></p></div><div class="col-xs-6"><p class="text-right"><a href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><span class="fa fa-github"></span>View on GitHub</a></p></div></div><div class="row"><div class="col-xs-6"><p>Website built with <a href="https://47degrees.github.io/sbt-microsites/" target="_blank" rel="noopener noreferrer">sbt-microsites</a> - © 2019 <a href="https://www.47deg.com/" target="_blank" rel="noopener noreferrer">47 Degrees</a></p></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/neotypes/highlight/highlight.pack.js"></script><script src="/neotypes/lunr/lunr.js"></script><script>
 // For all code blocks, copy the language from the containing div
