@@ -227,8 +227,8 @@
                         <a href="DeferredQuery.html" title="Represents a Neo4j query that can be asynchronously on a effect type.">DeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery]."></a>
-                        <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery].">DeferredQueryBuilder</a>
+                        <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery."></a>
+                        <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery.">DeferredQueryBuilder</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Driver$.html" title=""></a>
                         <a class="trait" href="Driver.html" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase"></a>
@@ -253,6 +253,10 @@
                         <span class="separator"></span>
                         <a class="trait" href="QueryArgMappersLowPriority.html" title=""></a>
                         <a href="QueryArgMappersLowPriority.html" title="">QueryArgMappersLowPriority</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="class" href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations."></a>
+                        <a href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations.">ReadOnlyDeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
@@ -407,6 +411,38 @@
       </span>
       <span class="symbol">
         <span class="name">metrics</span><span class="result">: <span class="extype" name="neotypes.StreamingDriver.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.4.5/org/neo4j/driver/ConnectionPoolMetrics.html#org.neo4j.driver.ConnectionPoolMetrics" class="extype" name="org.neo4j.driver.ConnectionPoolMetrics">ConnectionPoolMetrics</a>]]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a></dd></dl></div>
+    </li><li name="neotypes.StreamingDriver#readOnlyStreamingTransact" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="readOnlyStreamingTransact[T](config:neotypes.TransactionConfig)(txF:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]"></a><a id="readOnlyStreamingTransact[T](TransactionConfig)((StreamingTransaction[S,F])⇒S[T]):S[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/StreamingDriver.html#readOnlyStreamingTransact[T](config:neotypes.TransactionConfig)(txF:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyStreamingTransact</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span name="txF">txF: (<a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.StreamingDriver.S">S</span>, <span class="extype" name="neotypes.StreamingDriver.F">F</span>]) ⇒ <span class="extype" name="neotypes.StreamingDriver.S">S</span>[<span class="extype" name="neotypes.StreamingDriver.readOnlyStreamingTransact.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.StreamingDriver.S">S</span>[<span class="extype" name="neotypes.StreamingDriver.readOnlyStreamingTransact.T">T</span>]</span>
+      </span>
+      
+      
+    </li><li name="neotypes.Driver#readOnlyTransact" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="readOnlyTransact[T](config:neotypes.TransactionConfig)(txF:neotypes.Transaction[F]=&gt;F[T]):F[T]"></a><a id="readOnlyTransact[T](TransactionConfig)((Transaction[F])⇒F[T]):F[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/StreamingDriver.html#readOnlyTransact[T](config:neotypes.TransactionConfig)(txF:neotypes.Transaction[F]=&gt;F[T]):F[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyTransact</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span name="txF">txF: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.StreamingDriver.F">F</span>]) ⇒ <span class="extype" name="neotypes.StreamingDriver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.StreamingDriver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a></dd></dl></div>
@@ -764,6 +800,38 @@ a new instance of the underlying Java driver.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="neotypes.StreamingDriver#readOnlyStreamingTransact" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readOnlyStreamingTransact[T](txF:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]"></a><a id="readOnlyStreamingTransact[T]((StreamingTransaction[S,F])⇒S[T]):S[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/StreamingDriver.html#readOnlyStreamingTransact[T](txF:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyStreamingTransact</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="txF">txF: (<a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.StreamingDriver.S">S</span>, <span class="extype" name="neotypes.StreamingDriver.F">F</span>]) ⇒ <span class="extype" name="neotypes.StreamingDriver.S">S</span>[<span class="extype" name="neotypes.StreamingDriver.readOnlyStreamingTransact.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.StreamingDriver.S">S</span>[<span class="extype" name="neotypes.StreamingDriver.readOnlyStreamingTransact.T">T</span>]</span>
+      </span>
+      
+      
+    </li><li name="neotypes.Driver#readOnlyTransact" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readOnlyTransact[T](txF:neotypes.Transaction[F]=&gt;F[T]):F[T]"></a><a id="readOnlyTransact[T]((Transaction[F])⇒F[T]):F[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/StreamingDriver.html#readOnlyTransact[T](txF:neotypes.Transaction[F]=&gt;F[T]):F[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyTransact</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="txF">txF: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.StreamingDriver.F">F</span>]) ⇒ <span class="extype" name="neotypes.StreamingDriver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.StreamingDriver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a></dd></dl></div>
     </li><li name="neotypes.StreamingDriver#streamingTransact" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="streamingTransact[T](txF:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]"></a><a id="streamingTransact[T]((StreamingTransaction[S,F])⇒S[T]):S[T]"></a>
       <span class="permalink">

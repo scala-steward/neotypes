@@ -227,8 +227,8 @@
                         <a href="DeferredQuery.html" title="Represents a Neo4j query that can be asynchronously on a effect type.">DeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery]."></a>
-                        <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery].">DeferredQueryBuilder</a>
+                        <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery."></a>
+                        <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery.">DeferredQueryBuilder</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Driver$.html" title=""></a>
                         <a class="trait" href="" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase"></a>
@@ -253,6 +253,10 @@
                         <span class="separator"></span>
                         <a class="trait" href="QueryArgMappersLowPriority.html" title=""></a>
                         <a href="QueryArgMappersLowPriority.html" title="">QueryArgMappersLowPriority</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="class" href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations."></a>
+                        <a href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations.">ReadOnlyDeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
@@ -415,6 +419,22 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       <span class="symbol">
         <span class="name">metrics</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="https://javadoc.io/page/org.neo4j.driver/neo4j-java-driver/4.4.5/org/neo4j/driver/ConnectionPoolMetrics.html#org.neo4j.driver.ConnectionPoolMetrics" class="extype" name="org.neo4j.driver.ConnectionPoolMetrics">ConnectionPoolMetrics</a>]]</span>
+      </span>
+      
+      
+    </li><li name="neotypes.Driver#readOnlyTransact" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="readOnlyTransact[T](config:neotypes.TransactionConfig)(txF:neotypes.Transaction[F]=&gt;F[T]):F[T]"></a><a id="readOnlyTransact[T](TransactionConfig)((Transaction[F])⇒F[T]):F[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/Driver.html#readOnlyTransact[T](config:neotypes.TransactionConfig)(txF:neotypes.Transaction[F]=&gt;F[T]):F[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyTransact</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span name="txF">txF: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.Driver.F">F</span>]) ⇒ <span class="extype" name="neotypes.Driver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>
       </span>
       
       
@@ -740,6 +760,22 @@ a new instance of the underlying Java driver.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="neotypes.Driver#readOnlyTransact" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readOnlyTransact[T](txF:neotypes.Transaction[F]=&gt;F[T]):F[T]"></a><a id="readOnlyTransact[T]((Transaction[F])⇒F[T]):F[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/Driver.html#readOnlyTransact[T](txF:neotypes.Transaction[F]=&gt;F[T]):F[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyTransact</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="txF">txF: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.Driver.F">F</span>]) ⇒ <span class="extype" name="neotypes.Driver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.Driver.F">F</span>[<span class="extype" name="neotypes.Driver.readOnlyTransact.T">T</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">

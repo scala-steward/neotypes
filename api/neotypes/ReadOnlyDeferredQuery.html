@@ -223,8 +223,8 @@
                         <a href="CypherStringInterpolator.html" title="">CypherStringInterpolator</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="" title="Represents a Neo4j query that can be asynchronously on a effect type."></a>
-                        <a href="" title="Represents a Neo4j query that can be asynchronously on a effect type.">DeferredQuery</a>
+                        <a class="class" href="DeferredQuery.html" title="Represents a Neo4j query that can be asynchronously on a effect type."></a>
+                        <a href="DeferredQuery.html" title="Represents a Neo4j query that can be asynchronously on a effect type.">DeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
                         <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery."></a>
@@ -255,8 +255,8 @@
                         <a href="QueryArgMappersLowPriority.html" title="">QueryArgMappersLowPriority</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations."></a>
-                        <a href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations.">ReadOnlyDeferredQuery</a>
+                        <a class="class" href="" title="A special case of DeferredQuery that only admits read-only operations."></a>
+                        <a href="" title="A special case of DeferredQuery that only admits read-only operations.">ReadOnlyDeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
@@ -298,8 +298,8 @@
       <div id="definition">
         <div class="big-circle class">c</div>
         <p id="owner"><a href="index.html" class="extype" name="neotypes">neotypes</a></p>
-        <h1>DeferredQuery<span class="permalink">
-      <a href="../neotypes/DeferredQuery.html" title="Permalink">
+        <h1>ReadOnlyDeferredQuery<span class="permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -312,22 +312,21 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">DeferredQuery</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span><span class="result"> extends <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>] with <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <span class="name">ReadOnlyDeferredQuery</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span><span class="result"> extends <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>] with <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents a Neo4j query that can be asynchronously on a effect type.
-</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type of the value that will be returned when the query is executed.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/neotypes/neotypes/tree/main/core/src/main/scala/neotypes/query.scala" target="_blank">query.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://neotypes.github.io/neotypes/parameterized_queries.html">The parametrized queries documentation</a>.</p></span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A special case of <a href="DeferredQuery.html" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> that only admits read-only operations.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/neotypes/neotypes/tree/main/core/src/main/scala/neotypes/query.scala" target="_blank">query.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>], <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>], <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.15/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 346.50 118.00" height="118pt" width="347pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 342.5,-114 342.5,4 -4,4" stroke="transparent" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="neotypes.DeferredQuery (this class)" xlink:href="#inheritance-diagram"><path d="M239.67,-49C239.67,-49 141.33,-49 141.33,-49 137.17,-49 133,-44.83 133,-40.67 133,-40.67 133,-32.33 133,-32.33 133,-28.17 137.17,-24 141.33,-24 141.33,-24 239.67,-24 239.67,-24 243.83,-24 248,-28.17 248,-32.33 248,-32.33 248,-40.67 248,-40.67 248,-44.83 243.83,-49 239.67,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../lib/class_diagram.png" y="-43.5" x="143.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.1" x="164.5" text-anchor="start">DeferredQuery[T]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="neotypes.BaseDeferredQuery"><path d="M126.67,-110C126.67,-110 8.33,-110 8.33,-110 4.17,-110 0,-105.83 0,-101.67 0,-101.67 0,-93.33 0,-93.33 0,-89.17 4.17,-85 8.33,-85 8.33,-85 126.67,-85 126.67,-85 130.83,-85 135,-89.17 135,-93.33 135,-93.33 135,-101.67 135,-101.67 135,-105.83 130.83,-110 126.67,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../lib/trait_diagram.png" y="-104.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="31.5" text-anchor="start">BaseDeferredQuery[T]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="DeferredQuery[T] is a subtype of BaseDeferredQuery[T]"><path d="M98.08,-81.83C119.09,-71.75 146.6,-58.56 166.13,-49.19" stroke="#d4d4d4" fill="none"></path><polygon points="96.76,-79.75 91.51,-84.98 98.88,-84.17 96.76,-79.75" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.Product"><path d="M219.67,-110C219.67,-110 161.33,-110 161.33,-110 157.17,-110 153,-105.83 153,-101.67 153,-101.67 153,-93.33 153,-93.33 153,-89.17 157.17,-85 161.33,-85 161.33,-85 219.67,-85 219.67,-85 223.83,-85 228,-89.17 228,-93.33 228,-93.33 228,-101.67 228,-101.67 228,-105.83 223.83,-110 219.67,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../lib/trait_diagram.png" y="-104.5" x="163.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="184.5" text-anchor="start">Product</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="DeferredQuery[T] is a subtype of Product"><path d="M190.5,-77.76C190.5,-68.37 190.5,-57.29 190.5,-49.13" stroke="#d4d4d4" fill="none"></path><polygon points="188.05,-77.84 190.5,-84.84 192.95,-77.84 188.05,-77.84" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.Serializable"><path d="M330.17,-110C330.17,-110 254.83,-110 254.83,-110 250.67,-110 246.5,-105.83 246.5,-101.67 246.5,-101.67 246.5,-93.33 246.5,-93.33 246.5,-89.17 250.67,-85 254.83,-85 254.83,-85 330.17,-85 330.17,-85 334.33,-85 338.5,-89.17 338.5,-93.33 338.5,-93.33 338.5,-101.67 338.5,-101.67 338.5,-105.83 334.33,-110 330.17,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../lib/trait_diagram.png" y="-104.5" x="256.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="277.5" text-anchor="start">Serializable</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="DeferredQuery[T] is a subtype of Serializable"><path d="M266.21,-81.29C248.88,-71.27 226.52,-58.34 210.61,-49.13" stroke="#d4d4d4" fill="none"></path><polygon points="265.06,-83.46 272.35,-84.84 267.52,-79.22 265.06,-83.46" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 346.50 118.00" height="118pt" width="347pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 342.5,-114 342.5,4 -4,4" stroke="transparent" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="neotypes.ReadOnlyDeferredQuery (this class)" xlink:href="#inheritance-diagram"><path d="M259.17,-49C259.17,-49 121.83,-49 121.83,-49 117.67,-49 113.5,-44.83 113.5,-40.67 113.5,-40.67 113.5,-32.33 113.5,-32.33 113.5,-28.17 117.67,-24 121.83,-24 121.83,-24 259.17,-24 259.17,-24 263.33,-24 267.5,-28.17 267.5,-32.33 267.5,-32.33 267.5,-40.67 267.5,-40.67 267.5,-44.83 263.33,-49 259.17,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../lib/class_diagram.png" y="-43.5" x="123.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.1" x="144.5" text-anchor="start">ReadOnlyDeferredQuery[T]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="neotypes.BaseDeferredQuery"><path d="M126.67,-110C126.67,-110 8.33,-110 8.33,-110 4.17,-110 0,-105.83 0,-101.67 0,-101.67 0,-93.33 0,-93.33 0,-89.17 4.17,-85 8.33,-85 8.33,-85 126.67,-85 126.67,-85 130.83,-85 135,-89.17 135,-93.33 135,-93.33 135,-101.67 135,-101.67 135,-105.83 130.83,-110 126.67,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../lib/trait_diagram.png" y="-104.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="31.5" text-anchor="start">BaseDeferredQuery[T]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ReadOnlyDeferredQuery[T] is a subtype of BaseDeferredQuery[T]"><path d="M98.08,-81.83C119.09,-71.75 146.6,-58.56 166.13,-49.19" stroke="#d4d4d4" fill="none"></path><polygon points="96.76,-79.75 91.51,-84.98 98.88,-84.17 96.76,-79.75" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.Product"><path d="M219.67,-110C219.67,-110 161.33,-110 161.33,-110 157.17,-110 153,-105.83 153,-101.67 153,-101.67 153,-93.33 153,-93.33 153,-89.17 157.17,-85 161.33,-85 161.33,-85 219.67,-85 219.67,-85 223.83,-85 228,-89.17 228,-93.33 228,-93.33 228,-101.67 228,-101.67 228,-105.83 223.83,-110 219.67,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../lib/trait_diagram.png" y="-104.5" x="163.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="184.5" text-anchor="start">Product</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="ReadOnlyDeferredQuery[T] is a subtype of Product"><path d="M190.5,-77.76C190.5,-68.37 190.5,-57.29 190.5,-49.13" stroke="#d4d4d4" fill="none"></path><polygon points="188.05,-77.84 190.5,-84.84 192.95,-77.84 188.05,-77.84" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.Serializable"><path d="M330.17,-110C330.17,-110 254.83,-110 254.83,-110 250.67,-110 246.5,-105.83 246.5,-101.67 246.5,-101.67 246.5,-93.33 246.5,-93.33 246.5,-89.17 250.67,-85 254.83,-85 254.83,-85 330.17,-85 330.17,-85 334.33,-85 338.5,-89.17 338.5,-93.33 338.5,-93.33 338.5,-101.67 338.5,-101.67 338.5,-105.83 334.33,-110 330.17,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../lib/trait_diagram.png" y="-104.5" x="256.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-95.1" x="277.5" text-anchor="start">Serializable</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="ReadOnlyDeferredQuery[T] is a subtype of Serializable"><path d="M266.21,-81.29C248.88,-71.27 226.52,-58.34 210.61,-49.13" stroke="#d4d4d4" fill="none"></path><polygon points="265.06,-83.46 272.35,-84.84 267.52,-79.22 265.06,-83.46" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -358,7 +357,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="neotypes.DeferredQuery"><span>DeferredQuery</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="neotypes.BaseDeferredQuery"><span>BaseDeferredQuery</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="neotypes.ReadOnlyDeferredQuery"><span>ReadOnlyDeferredQuery</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="neotypes.BaseDeferredQuery"><span>BaseDeferredQuery</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -378,10 +377,10 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="neotypes.DeferredQuery#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(query:String,params:Map[String,neotypes.types.QueryParam]):neotypes.DeferredQuery[T]"></a><a id="&lt;init&gt;:DeferredQuery[T]"></a>
+              <ol><li name="neotypes.ReadOnlyDeferredQuery#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(query:String,params:Map[String,neotypes.types.QueryParam]):neotypes.ReadOnlyDeferredQuery[T]"></a><a id="&lt;init&gt;:ReadOnlyDeferredQuery[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#&lt;init&gt;(query:String,params:Map[String,neotypes.types.QueryParam]):neotypes.DeferredQuery[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#&lt;init&gt;(query:String,params:Map[String,neotypes.types.QueryParam]):neotypes.ReadOnlyDeferredQuery[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -390,10 +389,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">DeferredQuery</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span>
+        <span class="name">ReadOnlyDeferredQuery</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span>
       </span>
       
-      <p class="shortcomment cmt"></p>
+      
     </li></ol>
             </div>
 
@@ -407,7 +406,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -423,7 +422,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html###():Int" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -439,7 +438,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -455,7 +454,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -471,7 +470,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#clone():Object" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -492,10 +491,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#collectAs" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="collectAs[C](factory:collection.compat.Factory[T,C]):neotypes.BaseDeferredQuery.CollectAsPartiallyApplied[T,C]"></a><a id="collectAs[C](scala.collection.compat.Factory[T,C]):CollectAsPartiallyApplied[T,C]"></a>
+    </li><li name="neotypes.ReadOnlyDeferredQuery#collectAs" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="collectAs[C](factory:collection.compat.Factory[T,C]):neotypes.BaseDeferredQuery.ReadOnlyCollectAsPartiallyApplied[T,C]"></a><a id="collectAs[C](scala.collection.compat.Factory[T,C]):ReadOnlyCollectAsPartiallyApplied[T,C]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#collectAs[C](factory:collection.compat.Factory[T,C]):neotypes.BaseDeferredQuery.CollectAsPartiallyApplied[T,C]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#collectAs[C](factory:collection.compat.Factory[T,C]):neotypes.BaseDeferredQuery.ReadOnlyCollectAsPartiallyApplied[T,C]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -504,14 +503,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">collectAs</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="factory">factory: <a href="../scala/collection/compat/index.html#Factory[-A,+C]=scala.collection.generic.CanBuildFrom[Nothing,A,C]" class="extmbr" name="scala.collection.compat.Factory">scala.collection.compat.Factory</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>, <span class="extype" name="neotypes.DeferredQuery.collectAs.C">C</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.CollectAsPartiallyApplied">CollectAsPartiallyApplied</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>, <span class="extype" name="neotypes.DeferredQuery.collectAs.C">C</span>]</span>
+        <span class="name">collectAs</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="factory">factory: <a href="../scala/collection/compat/index.html#Factory[-A,+C]=scala.collection.generic.CanBuildFrom[Nothing,A,C]" class="extmbr" name="scala.collection.compat.Factory">scala.collection.compat.Factory</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>, <span class="extype" name="neotypes.ReadOnlyDeferredQuery.collectAs.C">C</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.ReadOnlyCollectAsPartiallyApplied">ReadOnlyCollectAsPartiallyApplied</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>, <span class="extype" name="neotypes.ReadOnlyDeferredQuery.collectAs.C">C</span>]</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#effectDriverTransaction" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
+    </li><li name="neotypes.ReadOnlyDeferredQuery#effectDriverTransaction" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="effectDriverTransaction[F[_],O](driver:neotypes.Driver[F])(tx:neotypes.Transaction[F]=&gt;F[O]):F[O]"></a><a id="effectDriverTransaction[F[_],O](Driver[F])((Transaction[F])⇒F[O]):F[O]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#effectDriverTransaction[F[_],O](driver:neotypes.Driver[F])(tx:neotypes.Transaction[F]=&gt;F[O]):F[O]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#effectDriverTransaction[F[_],O](driver:neotypes.Driver[F])(tx:neotypes.Transaction[F]=&gt;F[O]):F[O]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -520,14 +519,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">effectDriverTransaction</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransaction.F">F</span>]</span>)</span><span class="params">(<span name="tx">tx: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransaction.F">F</span>]) ⇒ <span class="extype" name="neotypes.DeferredQuery.effectDriverTransaction.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransaction.O">O</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.effectDriverTransaction.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransaction.O">O</span>]</span>
+        <span class="name">effectDriverTransaction</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransaction.F">F</span>]</span>)</span><span class="params">(<span name="tx">tx: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransaction.F">F</span>]) ⇒ <span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransaction.F">F</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransaction.O">O</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransaction.F">F</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransaction.O">O</span>]</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#effectDriverTransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
+    </li><li name="neotypes.ReadOnlyDeferredQuery#effectDriverTransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="effectDriverTransactionConfig[F[_],O](driver:neotypes.Driver[F])(config:neotypes.TransactionConfig,tx:neotypes.Transaction[F]=&gt;F[O]):F[O]"></a><a id="effectDriverTransactionConfig[F[_],O](Driver[F])(TransactionConfig,(Transaction[F])⇒F[O]):F[O]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#effectDriverTransactionConfig[F[_],O](driver:neotypes.Driver[F])(config:neotypes.TransactionConfig,tx:neotypes.Transaction[F]=&gt;F[O]):F[O]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#effectDriverTransactionConfig[F[_],O](driver:neotypes.Driver[F])(config:neotypes.TransactionConfig,tx:neotypes.Transaction[F]=&gt;F[O]):F[O]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -536,14 +535,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">effectDriverTransactionConfig</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransactionConfig.F">F</span>]</span>)</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>, <span name="tx">tx: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransactionConfig.F">F</span>]) ⇒ <span class="extype" name="neotypes.DeferredQuery.effectDriverTransactionConfig.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransactionConfig.O">O</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.effectDriverTransactionConfig.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.effectDriverTransactionConfig.O">O</span>]</span>
+        <span class="name">effectDriverTransactionConfig</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransactionConfig.F">F</span>]</span>)</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>, <span name="tx">tx: (<a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransactionConfig.F">F</span>]) ⇒ <span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransactionConfig.F">F</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransactionConfig.O">O</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransactionConfig.F">F</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.effectDriverTransactionConfig.O">O</span>]</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -556,74 +555,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#execute" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="execute[F[_]](tx:neotypes.Transaction[F])(implicitem:neotypes.mappers.ExecutionMapper[T]):F[T]"></a><a id="execute[F[_]](Transaction[F])(ExecutionMapper[T]):F[T]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#execute[F[_]](tx:neotypes.Transaction[F])(implicitem:neotypes.mappers.ExecutionMapper[T]):F[T]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">execute</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="tx">tx: <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.execute.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="em">em: <a href="mappers$$ExecutionMapper.html" class="extype" name="neotypes.mappers.ExecutionMapper">ExecutionMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.execute.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and ignores its output.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and ignores its output.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">em</dt><dd class="cmt"><p>execution mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will execute the query.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> deferredQuery =
-  <span class="lit">"CREATE (p:Person { name: 'Charlize Theron', born: 1975 })"</span>
-
-driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre></li></ol>
-            </div></dl></div>
-    </li><li name="neotypes.DeferredQuery#execute" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="execute[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitem:neotypes.mappers.ExecutionMapper[T]):F[T]"></a><a id="execute[F[_]](Driver[F],TransactionConfig)(ExecutionMapper[T]):F[T]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#execute[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitem:neotypes.mappers.ExecutionMapper[T]):F[T]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">execute</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.DeferredQuery.execute.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="em">em: <a href="mappers$$ExecutionMapper.html" class="extype" name="neotypes.mappers.ExecutionMapper">ExecutionMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.execute.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and ignores its output.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and ignores its output.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">driver</dt><dd class="cmt"><p>neotypes driver.</p></dd><dt class="param">config</dt><dd class="cmt"><p>neotypes transaction config.</p></dd><dt class="param">em</dt><dd class="cmt"><p>execution mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will execute the query.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="lit">"CREATE (p:Person { name: 'Charlize Theron', born: 1975 })"</span>
-  .query[<span class="std">Unit</span>]
-  .execute(driver, myConfig)</pre></li></ol>
-            </div></dl></div>
-    </li><li name="neotypes.DeferredQuery#execute" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="execute[F[_]](driver:neotypes.Driver[F])(implicitem:neotypes.mappers.ExecutionMapper[T]):F[T]"></a><a id="execute[F[_]](Driver[F])(ExecutionMapper[T]):F[T]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#execute[F[_]](driver:neotypes.Driver[F])(implicitem:neotypes.mappers.ExecutionMapper[T]):F[T]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">execute</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.DeferredQuery.execute.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="em">em: <a href="mappers$$ExecutionMapper.html" class="extype" name="neotypes.mappers.ExecutionMapper">ExecutionMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.execute.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and ignores its output.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and ignores its output.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">driver</dt><dd class="cmt"><p>neotypes driver.</p></dd><dt class="param">em</dt><dd class="cmt"><p>execution mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will execute the query.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="lit">"CREATE (p:Person { name: 'Charlize Theron', born: 1975 })"</span>
-  .query[<span class="std">Unit</span>]
-  .execute(driver)</pre></li></ol>
-            </div></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#finalize():Unit" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -645,7 +580,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#getClass():Class[_]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -664,7 +599,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -677,33 +612,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#list" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="list[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]"></a><a id="list[F[_]](Transaction[F])(ResultMapper[T]):F[List[T]]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#list[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">list</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="tx">tx: <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.list.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.list.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and returns a List of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a List of values.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will compute a List of T elements.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> deferredQuery =
-  <span class="lit">"MATCH (p:Person {name: 'Charlize Theron'})-[]-&gt;(m:Movie) RETURN p,m"</span>.query[(Person, Movie)]
-
-<span class="kw">val</span> result: F[<span class="std">List</span>[(Person, Movie)]] =
-  driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.list(tx))</pre></li></ol>
-            </div></dl></div>
     </li><li name="neotypes.BaseDeferredQuery#list" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="list[F[_],C[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]"></a><a id="list[F[_],C[_]](Driver[F],TransactionConfig)(ResultMapper[T]):F[List[T]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#list[F[_],C[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#list[F[_],C[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -712,7 +624,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">list</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="C">C<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
+        <span class="name">list</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="C">C<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a List of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a List of values.
@@ -725,7 +637,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="neotypes.BaseDeferredQuery#list" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="list[F[_],O](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]"></a><a id="list[F[_],O](Driver[F])(ResultMapper[T]):F[List[T]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#list[F[_],O](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#list[F[_],O](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[List[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -734,7 +646,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">list</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
+        <span class="name">list</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.list.F">F</span>[<a href="../scala/index.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a List of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a List of values.
@@ -744,33 +656,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     .query[(Person, Movie)]
     .list(driver)</pre></li></ol>
             </div></dl></div>
-    </li><li name="neotypes.DeferredQuery#map" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="map[F[_],K,V](tx:neotypes.Transaction[F])(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]"></a><a id="map[F[_],K,V](Transaction[F])(&lt;:&lt;[T,(K,V)],ResultMapper[(K,V)]):F[Map[K,V]]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#map[F[_],K,V](tx:neotypes.Transaction[F])(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">map</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="tx">tx: <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.map.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>, (<span class="extype" name="neotypes.DeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.DeferredQuery.map.V">V</span>)]</span>, <span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[(<span class="extype" name="neotypes.DeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.DeferredQuery.map.V">V</span>)]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.map.F">F</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="neotypes.DeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.DeferredQuery.map.V">V</span>]]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and returns a Map of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Map of values.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="tparam">K</dt><dd class="cmt"><p>keys type.</p></dd><dt class="tparam">V</dt><dd class="cmt"><p>values type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">ev</dt><dd class="cmt"><p>evidence that T is a tuple (K, V).</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type (K, V).</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will compute a Map of key-value pairs.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> deferredQuery =
-  <span class="lit">"MATCH (p:Person {name: 'Charlize Theron'})-[]-&gt;(m:Movie) RETURN p,m"</span>.query[(Person, Movie)]
-
-<span class="kw">val</span> result: F[<span class="std">Map</span>[Person, Movie]] =
-  driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.map(tx))</pre></li></ol>
-            </div></dl></div>
     </li><li name="neotypes.BaseDeferredQuery#map" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="map[F[_],O,K,V](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]"></a><a id="map[F[_],O,K,V](Driver[F],TransactionConfig)(&lt;:&lt;[T,(K,V)],ResultMapper[(K,V)]):F[Map[K,V]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#map[F[_],O,K,V](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#map[F[_],O,K,V](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -779,7 +668,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">map</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>, <span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>, (<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>, <span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[(<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>]]</span>
+        <span class="name">map</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>, <span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>, (<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>, <span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[(<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a Map[K,V] of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Map[K,V] of values.
@@ -792,7 +681,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="neotypes.BaseDeferredQuery#map" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="map[F[_],O,K,V](driver:neotypes.Driver[F])(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]"></a><a id="map[F[_],O,K,V](Driver[F])(&lt;:&lt;[T,(K,V)],ResultMapper[(K,V)]):F[Map[K,V]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#map[F[_],O,K,V](driver:neotypes.Driver[F])(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#map[F[_],O,K,V](driver:neotypes.Driver[F])(implicitev:T&lt;:&lt;(K,V),implicitrm:neotypes.mappers.ResultMapper[(K,V)]):F[Map[K,V]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -801,7 +690,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">map</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>, <span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>, (<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>, <span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[(<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>]]</span>
+        <span class="name">map</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">O</span>, <span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>, (<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>, <span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[(<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>)]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.map.F">F</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="neotypes.BaseDeferredQuery.map.K">K</span>, <span class="extype" name="neotypes.BaseDeferredQuery.map.V">V</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a Map[K,V] of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Map[K,V] of values.
@@ -814,7 +703,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -830,7 +719,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#notify():Unit" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -849,7 +738,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#notifyAll():Unit" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -865,10 +754,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#params" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="neotypes.ReadOnlyDeferredQuery#params" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="params:Map[String,neotypes.types.QueryParam]"></a><a id="params:Map[String,QueryParam]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#params:Map[String,neotypes.types.QueryParam]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#params:Map[String,neotypes.types.QueryParam]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -880,11 +769,11 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="name">params</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>
       </span>
       
-      <p class="shortcomment cmt">The values substituted into the query statement.</p><div class="fullcomment"><div class="comment cmt"><p>The values substituted into the query statement.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">The values substituted into the query statement.</p><div class="fullcomment"><div class="comment cmt"><p>The values substituted into the query statement.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
+    </li><li name="neotypes.ReadOnlyDeferredQuery#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="query:String"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#query:String" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#query:String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -896,34 +785,11 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="name">query</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">The query statement that will be executed.</p><div class="fullcomment"><div class="comment cmt"><p>The query statement that will be executed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#set" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="set[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]"></a><a id="set[F[_]](Transaction[F])(ResultMapper[T]):F[Set[T]]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#set[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">set</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="tx">tx: <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.set.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.set.F">F</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and returns a Set of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Set of values.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will compute a Set of T elements.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> deferredQuery =
-  <span class="lit">"MATCH (p:Person {name: 'Charlize Theron'})-[]-&gt;(m:Movie) RETURN p,m"</span>.query[(Person, Movie)]
-
-<span class="kw">val</span> result: F[<span class="std">Set</span>[(Person, Movie)]] =
-  driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.set(tx))</pre></li></ol>
-            </div></dl></div>
+      <p class="shortcomment cmt">The query statement that will be executed.</p><div class="fullcomment"><div class="comment cmt"><p>The query statement that will be executed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
     </li><li name="neotypes.BaseDeferredQuery#set" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="set[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]"></a><a id="set[F[_]](Driver[F],TransactionConfig)(ResultMapper[T]):F[Set[T]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#set[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#set[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -932,7 +798,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">set</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
+        <span class="name">set</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a Set of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Set of values.
@@ -945,7 +811,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="neotypes.BaseDeferredQuery#set" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="set[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]"></a><a id="set[F[_]](Driver[F])(ResultMapper[T]):F[Set[T]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#set[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#set[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Set[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -954,7 +820,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">set</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
+        <span class="name">set</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.set.F">F</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a Set of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Set of values.
@@ -964,33 +830,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     .query[(Person, Movie)]
     .set(driver)</pre></li></ol>
             </div></dl></div>
-    </li><li name="neotypes.DeferredQuery#single" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="single[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]"></a><a id="single[F[_]](Transaction[F])(ResultMapper[T]):F[T]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#single[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">single</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="tx">tx: <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.single.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.single.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and returns the unique record in the result.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns the unique record in the result.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will compute a single T element.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> deferredQuery =
-  <span class="lit">"MATCH (p:Person {name: 'Charlize Theron'})-[]-&gt;(m:Movie) RETURN p,m"</span>.query[(Person, Movie)]
-
-<span class="kw">val</span> result: F[(Person, Movie)] =
-  driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.single(tx))</pre></li></ol>
-            </div><dt>Note</dt><dd><span class="cmt"><p>This will fail if the query returned more than a single result.</p></span></dd></dl></div>
     </li><li name="neotypes.BaseDeferredQuery#single" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="single[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]"></a><a id="single[F[_]](Driver[F],TransactionConfig)(ResultMapper[T]):F[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#single[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#single[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -999,7 +842,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">single</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">single</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns the unique record in the result.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns the unique record in the result.
@@ -1012,7 +855,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="neotypes.BaseDeferredQuery#single" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="single[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]"></a><a id="single[F[_]](Driver[F])(ResultMapper[T]):F[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#single[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#single[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1021,7 +864,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">single</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">single</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.single.F">F</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns the unique record in the result.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns the unique record in the result.
@@ -1031,27 +874,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     .query[(Person, Movie)]
     .single(driver)</pre></li></ol>
             </div><dt>Note</dt><dd><span class="cmt"><p>This will fail if the query returned more than a single result.</p></span></dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#stream" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="stream[S[_],F[_]](tx:neotypes.StreamingTransaction[S,F])(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]"></a><a id="stream[S[_],F[_]](StreamingTransaction[S,F])(ResultMapper[T]):S[T]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#stream[S[_],F[_]](tx:neotypes.StreamingTransaction[S,F])(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">stream</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="tx">tx: <a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.DeferredQuery.stream.S">S</span>, <span class="extype" name="neotypes.DeferredQuery.stream.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.stream.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Evaluate the query and get the results as a Stream.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate the query and get the results as a Stream.
-</p></div><dl class="paramcmts block"><dt class="tparam">S</dt><dd class="cmt"><p>stream type.</p></dd><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual Stream of T values.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://neotypes.github.io/neotypes/docs/streams.html">The streaming documentation</a>.</p></span></dd></dl></div>
     </li><li name="neotypes.BaseDeferredQuery#stream" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="stream[S[_],F[_]](driver:neotypes.StreamingDriver[S,F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]"></a><a id="stream[S[_],F[_]](StreamingDriver[S,F],TransactionConfig)(ResultMapper[T]):S[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#stream[S[_],F[_]](driver:neotypes.StreamingDriver[S,F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#stream[S[_],F[_]](driver:neotypes.StreamingDriver[S,F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1060,7 +886,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">stream</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>, <span class="extype" name="neotypes.BaseDeferredQuery.stream.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">stream</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>, <span class="extype" name="neotypes.BaseDeferredQuery.stream.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Evaluate the query an get the results as a Stream.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate the query an get the results as a Stream.
@@ -1068,7 +894,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="neotypes.BaseDeferredQuery#stream" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="stream[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]"></a><a id="stream[S[_],F[_]](StreamingDriver[S,F])(ResultMapper[T]):S[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#stream[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#stream[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(implicitrm:neotypes.mappers.ResultMapper[T]):S[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1077,15 +903,15 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">stream</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>, <span class="extype" name="neotypes.BaseDeferredQuery.stream.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">stream</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>, <span class="extype" name="neotypes.BaseDeferredQuery.stream.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.stream.S">S</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Evaluate the query an get the results as a Stream.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate the query an get the results as a Stream.
 </p></div><dl class="paramcmts block"><dt class="tparam">S</dt><dd class="cmt"><p>stream type.</p></dd><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">driver</dt><dd class="cmt"><p>neotypes driver.</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual Stream of T values.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>BaseDeferredQuery</dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://neotypes.github.io/neotypes/docs/streams.html">The streaming documentation</a>.</p></span></dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#streamDriverTransaction" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="neotypes.ReadOnlyDeferredQuery#streamDriverTransaction" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="streamDriverTransaction[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(st:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]"></a><a id="streamDriverTransaction[S[_],F[_]](StreamingDriver[S,F])((StreamingTransaction[S,F])⇒S[T]):S[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#streamDriverTransaction[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(st:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#streamDriverTransaction[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(st:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1094,14 +920,14 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">streamDriverTransaction</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.DeferredQuery.streamDriverTransaction.S">S</span>, <span class="extype" name="neotypes.DeferredQuery.streamDriverTransaction.F">F</span>]</span>)</span><span class="params">(<span name="st">st: (<a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.DeferredQuery.streamDriverTransaction.S">S</span>, <span class="extype" name="neotypes.DeferredQuery.streamDriverTransaction.F">F</span>]) ⇒ <span class="extype" name="neotypes.DeferredQuery.streamDriverTransaction.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.streamDriverTransaction.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">streamDriverTransaction</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransaction.S">S</span>, <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransaction.F">F</span>]</span>)</span><span class="params">(<span name="st">st: (<a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransaction.S">S</span>, <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransaction.F">F</span>]) ⇒ <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransaction.S">S</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransaction.S">S</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#streamDriverTransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
+    </li><li name="neotypes.ReadOnlyDeferredQuery#streamDriverTransactionConfig" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="streamDriverTransactionConfig[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(config:neotypes.TransactionConfig,st:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]"></a><a id="streamDriverTransactionConfig[S[_],F[_]](StreamingDriver[S,F])(TransactionConfig,(StreamingTransaction[S,F])⇒S[T]):S[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#streamDriverTransactionConfig[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(config:neotypes.TransactionConfig,st:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#streamDriverTransactionConfig[S[_],F[_]](driver:neotypes.StreamingDriver[S,F])(config:neotypes.TransactionConfig,st:neotypes.StreamingTransaction[S,F]=&gt;S[T]):S[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1110,14 +936,14 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">streamDriverTransactionConfig</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.DeferredQuery.streamDriverTransactionConfig.S">S</span>, <span class="extype" name="neotypes.DeferredQuery.streamDriverTransactionConfig.F">F</span>]</span>)</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>, <span name="st">st: (<a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.DeferredQuery.streamDriverTransactionConfig.S">S</span>, <span class="extype" name="neotypes.DeferredQuery.streamDriverTransactionConfig.F">F</span>]) ⇒ <span class="extype" name="neotypes.DeferredQuery.streamDriverTransactionConfig.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.streamDriverTransactionConfig.S">S</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">streamDriverTransactionConfig</span><span class="tparams">[<span name="S">S<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="StreamingDriver.html" class="extype" name="neotypes.StreamingDriver">StreamingDriver</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransactionConfig.S">S</span>, <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransactionConfig.F">F</span>]</span>)</span><span class="params">(<span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>, <span name="st">st: (<a href="StreamingTransaction.html" class="extype" name="neotypes.StreamingTransaction">StreamingTransaction</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransactionConfig.S">S</span>, <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransactionConfig.F">F</span>]) ⇒ <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransactionConfig.S">S</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.ReadOnlyDeferredQuery.streamDriverTransactionConfig.S">S</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1130,33 +956,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#vector" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="vector[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]"></a><a id="vector[F[_]](Transaction[F])(ResultMapper[T]):F[Vector[T]]"></a>
-      <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#vector[F[_]](tx:neotypes.Transaction[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">vector</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="tx">tx: <a href="Transaction.html" class="extype" name="neotypes.Transaction">Transaction</a>[<span class="extype" name="neotypes.DeferredQuery.vector.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.DeferredQuery.vector.F">F</span>[<a href="../scala/index.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Executes the query and returns a Vector of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Vector of values.
-</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>effect type.</p></dd><dt class="param">tx</dt><dd class="cmt"><p>neotypes transaction.</p></dd><dt class="param">rm</dt><dd class="cmt"><p>result mapper for type T.</p></dd><dt>returns</dt><dd class="cmt"><p>An effectual value that will compute a Vector of T elements.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> deferredQuery =
-  <span class="lit">"MATCH (p:Person {name: 'Charlize Theron'})-[]-&gt;(m:Movie) RETURN p,m"</span>.query[(Person, Movie)]
-
-<span class="kw">val</span> result: F[Vector[(Person, Movie)]] =
-  driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.vector(tx))</pre></li></ol>
-            </div></dl></div>
     </li><li name="neotypes.BaseDeferredQuery#vector" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="vector[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]"></a><a id="vector[F[_]](Driver[F],TransactionConfig)(ResultMapper[T]):F[Vector[T]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#vector[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#vector[F[_]](driver:neotypes.Driver[F],config:neotypes.TransactionConfig)(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1165,7 +968,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">vector</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>[<a href="../scala/index.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
+        <span class="name">vector</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>]</span>, <span name="config">config: <a href="TransactionConfig.html" class="extype" name="neotypes.TransactionConfig">TransactionConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>[<a href="../scala/index.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a Vector of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Vector of values.
@@ -1178,7 +981,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="neotypes.BaseDeferredQuery#vector" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="vector[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]"></a><a id="vector[F[_]](Driver[F])(ResultMapper[T]):F[Vector[T]]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#vector[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#vector[F[_]](driver:neotypes.Driver[F])(implicitrm:neotypes.mappers.ResultMapper[T]):F[Vector[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1187,7 +990,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">vector</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>[<a href="../scala/index.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]]</span>
+        <span class="name">vector</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="driver">driver: <a href="Driver.html" class="extype" name="neotypes.Driver">Driver</a>[<span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="rm">rm: <a href="mappers$$ResultMapper.html" class="extype" name="neotypes.mappers.ResultMapper">ResultMapper</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="neotypes.BaseDeferredQuery.vector.F">F</span>[<a href="../scala/index.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Executes the query and returns a Vector of values.</p><div class="fullcomment"><div class="comment cmt"><p>Executes the query and returns a Vector of values.
@@ -1200,7 +1003,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#wait():Unit" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1222,7 +1025,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1244,7 +1047,7 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1265,10 +1068,10 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="neotypes.DeferredQuery#withParams" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="withParams(params:Map[String,neotypes.types.QueryParam]):neotypes.DeferredQuery[T]"></a><a id="withParams(Map[String,QueryParam]):DeferredQuery[T]"></a>
+    </li><li name="neotypes.ReadOnlyDeferredQuery#withParams" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withParams(params:Map[String,neotypes.types.QueryParam]):neotypes.ReadOnlyDeferredQuery[T]"></a><a id="withParams(Map[String,QueryParam]):ReadOnlyDeferredQuery[T]"></a>
       <span class="permalink">
-      <a href="../neotypes/DeferredQuery.html#withParams(params:Map[String,neotypes.types.QueryParam]):neotypes.DeferredQuery[T]" title="Permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html#withParams(params:Map[String,neotypes.types.QueryParam]):neotypes.ReadOnlyDeferredQuery[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1277,11 +1080,11 @@ driver.transact(tx <span class="kw">=&gt;</span> deferredQuery.execute(tx))</pre
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withParams</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span><span class="result">: <a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</span>
+        <span class="name">withParams</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span><span class="result">: <a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Creates a new query with an updated set of parameters.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new query with an updated set of parameters.
-</p></div><dl class="paramcmts block"><dt class="param">params</dt><dd class="cmt"><p>QueryParams to be added.</p></dd><dt>returns</dt><dd class="cmt"><p>DeferredQuery with params added to existing params.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> → BaseDeferredQuery</dd><dt>Note</dt><dd><span class="cmt"><p>If params contains a key that is already present in the current query,
+</p></div><dl class="paramcmts block"><dt class="param">params</dt><dd class="cmt"><p>QueryParams to be added.</p></dd><dt>returns</dt><dd class="cmt"><p>DeferredQuery with params added to existing params.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a> → BaseDeferredQuery</dd><dt>Note</dt><dd><span class="cmt"><p>If params contains a key that is already present in the current query,
 the new one will override the previous one.</p></span></dd></dl></div>
     </li>
               </ol>
@@ -1302,7 +1105,7 @@ the new one will override the previous one.</p></span></dd></dl></div>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.15/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a></h3>
             </div><div class="parent" name="neotypes.BaseDeferredQuery">
-              <h3>Inherited from <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>]</h3>
+              <h3>Inherited from <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">

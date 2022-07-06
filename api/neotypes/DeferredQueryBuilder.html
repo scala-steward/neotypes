@@ -227,8 +227,8 @@
                         <a href="DeferredQuery.html" title="Represents a Neo4j query that can be asynchronously on a effect type.">DeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="" title="A builder for constructing instance of [DeferredQuery]."></a>
-                        <a href="" title="A builder for constructing instance of [DeferredQuery].">DeferredQueryBuilder</a>
+                        <a class="class" href="" title="A builder for constructing instance of DeferredQuery."></a>
+                        <a href="" title="A builder for constructing instance of DeferredQuery.">DeferredQueryBuilder</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Driver$.html" title=""></a>
                         <a class="trait" href="Driver.html" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase"></a>
@@ -253,6 +253,10 @@
                         <span class="separator"></span>
                         <a class="trait" href="QueryArgMappersLowPriority.html" title=""></a>
                         <a href="QueryArgMappersLowPriority.html" title="">QueryArgMappersLowPriority</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="class" href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations."></a>
+                        <a href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations.">ReadOnlyDeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
@@ -313,8 +317,8 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A builder for constructing instance of [DeferredQuery].</p><p>The idiomatic way to use the DeferredQueryBuilder is with the <code>c</code> String Interpolation.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/neotypes/neotypes/tree/main/core/src/main/scala/neotypes/DeferredQuery.scala" target="_blank">DeferredQuery.scala</a></dd><div class="block">Example:
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A builder for constructing instance of <a href="DeferredQuery.html" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a>.</p><p>The idiomatic way to use the DeferredQueryBuilder is with the <code>c</code> String Interpolation.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/neotypes/neotypes/tree/main/core/src/main/scala/neotypes/query.scala" target="_blank">query.scala</a></dd><div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">val</span> name = <span class="lit">"John"</span>
 <span class="kw">val</span> born = <span class="num">1980</span>
 
@@ -672,7 +676,7 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="neotypes.DeferredQueryBuilder#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="neotypes.DeferredQueryBuilder#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="query[T]:neotypes.DeferredQuery[T]"></a><a id="query[T]:DeferredQuery[T]"></a>
       <span class="permalink">
       <a href="../neotypes/DeferredQueryBuilder.html#query[T]:neotypes.DeferredQuery[T]" title="Permalink">
@@ -687,8 +691,23 @@
         <span class="name">query</span><span class="tparams">[<span name="T">T</span>]</span><span class="result">: <a href="DeferredQuery.html" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a>[<span class="extype" name="neotypes.DeferredQueryBuilder.query.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Creates a [DeferredQuery] from this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a [DeferredQuery] from this builder.
-</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the result type of the constructed query.</p></dd><dt>returns</dt><dd class="cmt"><p>A [DeferredQuery[T]]</p></dd></dl></div>
+      
+    </li><li name="neotypes.DeferredQueryBuilder#readOnlyQuery" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readOnlyQuery[T]:neotypes.ReadOnlyDeferredQuery[T]"></a><a id="readOnlyQuery[T]:ReadOnlyDeferredQuery[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/DeferredQueryBuilder.html#readOnlyQuery[T]:neotypes.ReadOnlyDeferredQuery[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOnlyQuery</span><span class="tparams">[<span name="T">T</span>]</span><span class="result">: <a href="ReadOnlyDeferredQuery.html" class="extype" name="neotypes.ReadOnlyDeferredQuery">ReadOnlyDeferredQuery</a>[<span class="extype" name="neotypes.DeferredQueryBuilder.readOnlyQuery.T">T</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">

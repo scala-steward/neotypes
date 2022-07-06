@@ -227,8 +227,8 @@
                         <a href="DeferredQuery.html" title="Represents a Neo4j query that can be asynchronously on a effect type.">DeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <span class="separator"></span>
-                        <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery]."></a>
-                        <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of [DeferredQuery].">DeferredQueryBuilder</a>
+                        <a class="class" href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery."></a>
+                        <a href="DeferredQueryBuilder.html" title="A builder for constructing instance of DeferredQuery.">DeferredQueryBuilder</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Driver$.html" title=""></a>
                         <a class="trait" href="Driver.html" title="A neotypes driver for accessing the neo4j graph database A driver wrapped in the resource type can be created using the neotypes GraphDatabase"></a>
@@ -253,6 +253,10 @@
                         <span class="separator"></span>
                         <a class="trait" href="QueryArgMappersLowPriority.html" title=""></a>
                         <a href="QueryArgMappersLowPriority.html" title="">QueryArgMappersLowPriority</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="class" href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations."></a>
+                        <a href="ReadOnlyDeferredQuery.html" title="A special case of DeferredQuery that only admits read-only operations.">ReadOnlyDeferredQuery</a>
                       </li><li class="current-entities indented1">
                         <a class="object" href="Stream$.html" title=""></a>
                         <a class="trait" href="Stream.html" title=""></a>
@@ -397,7 +401,7 @@
       
       
     </li><li name="neotypes.DeferredQuery" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="DeferredQuery[T]extendsProductwithSerializable"></a><a id="DeferredQuery[T]:DeferredQuery[T]"></a>
+      <a id="DeferredQuery[T]extendsBaseDeferredQuery[T]withProductwithSerializable"></a><a id="DeferredQuery[T]:DeferredQuery[T]"></a>
       <span class="permalink">
       <a href="../neotypes/DeferredQuery.html" title="Permalink">
         <i class="material-icons"></i>
@@ -408,7 +412,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="Represents a Neo4j query that can be asynchronously on a effect type." href="DeferredQuery.html"><span class="name">DeferredQuery</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="Represents a Neo4j query that can be asynchronously on a effect type." href="DeferredQuery.html"><span class="name">DeferredQuery</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span><span class="result"> extends <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.DeferredQuery.T">T</span>] with <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt">Represents a Neo4j query that can be asynchronously on a effect type.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a Neo4j query that can be asynchronously on a effect type.
@@ -425,10 +429,10 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="A builder for constructing instance of [DeferredQuery]." href="DeferredQueryBuilder.html"><span class="name">DeferredQueryBuilder</span></a><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+        <a title="A builder for constructing instance of DeferredQuery." href="DeferredQueryBuilder.html"><span class="name">DeferredQueryBuilder</span></a><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
       </span>
       
-      <p class="shortcomment cmt">A builder for constructing instance of [DeferredQuery].</p><div class="fullcomment"><div class="comment cmt"><p>A builder for constructing instance of [DeferredQuery].</p><p>The idiomatic way to use the DeferredQueryBuilder is with the <code>c</code> String Interpolation.
+      <p class="shortcomment cmt">A builder for constructing instance of <a href="DeferredQuery.html" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A builder for constructing instance of <a href="DeferredQuery.html" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a>.</p><p>The idiomatic way to use the DeferredQueryBuilder is with the <code>c</code> String Interpolation.
 </p></div><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="kw">val</span> name = <span class="lit">"John"</span>
 <span class="kw">val</span> born = <span class="num">1980</span>
@@ -525,6 +529,22 @@ A driver wrapped in the resource type can be created using the neotypes GraphDat
       </span>
       
       
+    </li><li name="neotypes.ReadOnlyDeferredQuery" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadOnlyDeferredQuery[T]extendsBaseDeferredQuery[T]withProductwithSerializable"></a><a id="ReadOnlyDeferredQuery[T]:ReadOnlyDeferredQuery[T]"></a>
+      <span class="permalink">
+      <a href="../neotypes/ReadOnlyDeferredQuery.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="A special case of DeferredQuery that only admits read-only operations." href="ReadOnlyDeferredQuery.html"><span class="name">ReadOnlyDeferredQuery</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="types$$QueryParam.html" class="extype" name="neotypes.types.QueryParam">QueryParam</a>]</span>)</span><span class="result"> extends <span class="extype" name="neotypes.BaseDeferredQuery">BaseDeferredQuery</span>[<span class="extype" name="neotypes.ReadOnlyDeferredQuery.T">T</span>] with <a href="https://www.scala-lang.org/api/2.12.15/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.15/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">A special case of <a href="DeferredQuery.html" class="extype" name="neotypes.DeferredQuery">DeferredQuery</a> that only admits read-only operations.</p>
     </li><li name="neotypes.Stream" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Stream[S[_]]extendsAnyRef"></a><a id="Stream[S[_]]:Stream[S]"></a>
       <span class="permalink">

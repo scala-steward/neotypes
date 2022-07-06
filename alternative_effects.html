@@ -86,17 +86,19 @@
 
 <h3 id="ziotask-neotypes-zio">zio.Task <em>(neotypes-zio)</em></h3>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">zio.</span><span class="o">{</span><span class="nc">Runtime</span><span class="o">,</span> <span class="nc">Managed</span><span class="o">,</span> <span class="nc">Task</span><span class="o">}</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">zio.</span><span class="o">{</span><span class="nc">Runtime</span><span class="o">,</span> <span class="nc">Scope</span><span class="o">,</span> <span class="nc">Task</span><span class="o">,</span> <span class="nc">ZIO</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">Driver</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
 <span class="k">import</span> <span class="nn">neotypes.zio.implicits._</span> <span class="c1">// Brings the implicit neotypes.Async[Task] instance into the scope. // Brings the implicit neotypes.Async[Task] instance into the scope.</span>
 <span class="k">import</span> <span class="nn">org.neo4j.driver.AuthTokens</span>
 
-<span class="k">val</span> <span class="nv">driver</span><span class="k">:</span> <span class="kt">Managed</span><span class="o">[</span><span class="kt">Throwable</span>, <span class="kt">Driver</span><span class="o">[</span><span class="kt">Task</span><span class="o">]]</span> <span class="k">=</span>
+<span class="k">val</span> <span class="nv">driver</span><span class="k">:</span> <span class="kt">ZIO</span><span class="o">[</span><span class="kt">Scope</span>, <span class="kt">Throwable</span>, <span class="kt">Driver</span><span class="o">[</span><span class="kt">Task</span><span class="o">]]</span> <span class="k">=</span>
   <span class="nv">GraphDatabase</span><span class="o">.</span><span class="py">driver</span><span class="o">[</span><span class="kt">Task</span><span class="o">](</span><span class="s">"bolt://localhost:7687"</span><span class="o">,</span> <span class="nv">AuthTokens</span><span class="o">.</span><span class="py">basic</span><span class="o">(</span><span class="s">"neo4j"</span><span class="o">,</span> <span class="s">"****"</span><span class="o">))</span>
 
-<span class="k">val</span> <span class="nv">program</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nv">driver</span><span class="o">.</span><span class="py">use</span> <span class="o">{</span> <span class="n">d</span> <span class="k">=&gt;</span>
-  <span class="s">"MATCH (p: Person { name: 'Charlize Theron' }) RETURN p.name"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">String</span><span class="o">].</span><span class="py">single</span><span class="o">(</span><span class="n">d</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">program</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nv">ZIO</span><span class="o">.</span><span class="py">scoped</span> <span class="o">{</span>
+  <span class="nv">driver</span><span class="o">.</span><span class="py">flatMap</span> <span class="o">{</span><span class="n">d</span> <span class="k">=&gt;</span>
+    <span class="s">"MATCH (p: Person { name: 'Charlize Theron' }) RETURN p.name"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">String</span><span class="o">].</span><span class="py">single</span><span class="o">(</span><span class="n">d</span><span class="o">)</span>
+  <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="k">val</span> <span class="nv">runtime</span> <span class="k">=</span> <span class="nv">Runtime</span><span class="o">.</span><span class="py">default</span>
