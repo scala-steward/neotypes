@@ -86,7 +86,7 @@
 
 <h3 id="ziotask-neotypes-zio">zio.Task <em>(neotypes-zio)</em></h3>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">zio.</span><span class="o">{</span><span class="nc">Runtime</span><span class="o">,</span> <span class="nc">Scope</span><span class="o">,</span> <span class="nc">Task</span><span class="o">,</span> <span class="nc">ZIO</span><span class="o">}</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">zio.</span><span class="o">{</span><span class="nc">Runtime</span><span class="o">,</span> <span class="nc">Scope</span><span class="o">,</span> <span class="nc">Task</span><span class="o">,</span> <span class="nc">Unsafe</span><span class="o">,</span> <span class="nc">ZIO</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">Driver</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
 <span class="k">import</span> <span class="nn">neotypes.zio.implicits._</span> <span class="c1">// Brings the implicit neotypes.Async[Task] instance into the scope. // Brings the implicit neotypes.Async[Task] instance into the scope.</span>
@@ -101,8 +101,9 @@
   <span class="o">}</span>
 <span class="o">}</span>
 
-<span class="k">val</span> <span class="nv">runtime</span> <span class="k">=</span> <span class="nv">Runtime</span><span class="o">.</span><span class="py">default</span>
-<span class="k">val</span> <span class="nv">data</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="nv">runtime</span><span class="o">.</span><span class="py">unsafeRun</span><span class="o">(</span><span class="n">program</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">data</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="nv">Unsafe</span><span class="o">.</span><span class="py">unsafe</span> <span class="o">{</span> <span class="k">implicit</span> <span class="n">unsafe</span> <span class="k">=&gt;</span>
+  <span class="nv">Runtime</span><span class="o">.</span><span class="py">default</span><span class="o">.</span><span class="py">unsafe</span><span class="o">.</span><span class="py">run</span><span class="o">(</span><span class="n">program</span><span class="o">).</span><span class="py">getOrThrow</span><span class="o">()</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <h2 id="custom-effect-type">Custom effect type</h2>

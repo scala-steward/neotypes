@@ -102,7 +102,7 @@ And replacing the <code class="highlighter-rouge">neotypes.fs2.Fs2IoStream</code
 
 <h3 id="zio-zstreams-neotypes-zio-stream">ZIO ZStreams <em>(neotypes-zio-stream)</em></h3>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">zio.</span><span class="o">{</span><span class="nc">Runtime</span><span class="o">,</span> <span class="nc">Scope</span><span class="o">,</span> <span class="nc">Task</span><span class="o">,</span> <span class="nc">ZIO</span><span class="o">}</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">zio.</span><span class="o">{</span><span class="nc">Runtime</span><span class="o">,</span> <span class="nc">Scope</span><span class="o">,</span> <span class="nc">Task</span><span class="o">,</span> <span class="nc">Unsafe</span><span class="o">,</span> <span class="nc">ZIO</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">zio.stream.ZStream</span>
 <span class="k">import</span> <span class="nn">neotypes.</span><span class="o">{</span><span class="nc">GraphDatabase</span><span class="o">,</span> <span class="nc">StreamingDriver</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">neotypes.implicits.syntax.string._</span> <span class="c1">// Provides the query[T] extension method. // Provides the query[T] extension method.</span>
@@ -119,10 +119,13 @@ And replacing the <code class="highlighter-rouge">neotypes.fs2.Fs2IoStream</code
     <span class="s">"MATCH (p:Person) RETURN p.name"</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">String</span><span class="o">].</span><span class="py">stream</span><span class="o">(</span><span class="n">s</span><span class="o">)</span>
   <span class="o">}</span>
 
-<span class="nv">Runtime</span><span class="o">.</span><span class="py">default</span><span class="o">.</span><span class="py">unsafeRun</span> <span class="o">{</span>
-  <span class="c1">// ZStream#.foreach returns a ZIO and we want to eliminate Scope from R</span>
-  <span class="nv">ZIO</span><span class="o">.</span><span class="py">scoped</span> <span class="o">{</span>
-    <span class="nv">program</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="n">n</span> <span class="k">=&gt;</span> <span class="nv">ZIO</span><span class="o">.</span><span class="py">succeed</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">n</span><span class="o">)))</span>
+
+<span class="nv">Unsafe</span><span class="o">.</span><span class="py">unsafe</span> <span class="o">{</span> <span class="k">implicit</span> <span class="n">unsafe</span> <span class="k">=&gt;</span>
+  <span class="nv">Runtime</span><span class="o">.</span><span class="py">default</span><span class="o">.</span><span class="py">unsafe</span><span class="o">.</span><span class="py">run</span> <span class="o">{</span>
+    <span class="c1">// ZStream#.foreach returns a ZIO and we want to eliminate Scope from R</span>
+    <span class="nv">ZIO</span><span class="o">.</span><span class="py">scoped</span> <span class="o">{</span>
+      <span class="nv">program</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="n">n</span> <span class="k">=&gt;</span> <span class="nv">ZIO</span><span class="o">.</span><span class="py">succeed</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">n</span><span class="o">)))</span>
+    <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
