@@ -1,5 +1,32 @@
 <!DOCTYPE html><html><head><title>neotypes: Changelog</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="neotypes" /><meta name="description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><meta name="og:image" content="/neotypes/img/poster.png" /><meta name="image" property="og:image" content="/neotypes/img/poster.png" /><meta name="og:title" content="neotypes: Changelog" /><meta name="title" property="og:title" content="neotypes: Changelog" /><meta name="og:site_name" content="neotypes" /><meta name="og:url" content="https://neotypes.github.io/neotypes/" /><meta name="og:type" content="website" /><meta name="og:description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><link rel="icon" type="image/png" href="/neotypes/img/favicon.png" /><meta name="twitter:title" content="neotypes: Changelog" /><meta name="twitter:image" content="/neotypes/img/poster.png" /><meta name="twitter:description" content="Scala lightweight, type-safe, asynchronous driver for neo4j" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/neotypes/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/neotypes/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/neotypes/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/neotypes/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/neotypes/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/neotypes/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/neotypes/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/neotypes/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/neotypes/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/neotypes/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/neotypes/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/neotypes/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/neotypes/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/neotypes/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/neotypes/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/neotypes/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/neotypes/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/neotypes/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/neotypes/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/neotypes/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/neotypes/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/neotypes/css/pattern-style.css" /><link rel="stylesheet" href="/neotypes/css/style.css" /></head><body><header id="site-header"><div class="navbar-wrapper navbar-inverse"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/neotypes/" class="brand"><div class="icon-wrapper"><span>neotypes</span></div></a></div><nav class="text-right"><ul class=""><li class="search-nav hidden-xs"><div id="search-dropdown"><label><i class="fa fa-search"></i>Search</label><input id="search-bar" type="text" placeholder="Enter keywords here..." onclick="displayToggleSearch(event)" /><ul id="search-dropdown-content" class="dropdown dropdown-content"></ul></div></li><li><a class="transparent-on-hover" href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i><span class="hidden-sm hidden-xs">GitHub</span></a></li><li><a class="transparent-on-hover" href="/neotypes/api/neotypes/index.html"><i class="fa fa-file-text"></i><span class="hidden-sm hidden-xs">API Documentation</span></a></li></ul></nav></div></div><div class="jumbotron" style="background-image:url('/neotypes/img/jumbotron_pattern.png')"></div><div id="horizontal-menu"><ul class="horizontal-nav"><li><a class="" href="/neotypes/">Home</a></li><li><a class="" href="/neotypes/overview.html">Overview</a></li><li><a class="" href="/neotypes/parameterized_queries.html">Parameterized Queries</a></li><li><a class="" href="/neotypes/types.html">Supported types</a></li><li><a class="" href="/neotypes/alternative_effects.html">Alternative effects</a></li><li><a class="" href="/neotypes/streams.html">Streaming</a></li><li><a class="" href="/neotypes/driver_transaction.html">Transactions</a></li><li><a class=" active " href="/neotypes/changelog.html">Changelog</a></li></ul></div></header><main id="site-main" class="page-site-main"><section class="use"><div class="container"><div id="content"><h1 id="changelog">Changelog</h1>
 
+<h2 id="v0220-2022-08-03">v0.22.0 <em>(2022-08-03)</em></h2>
+
+<h3 id="separate-subproject-for-generic-548">Separate subproject for generic (<a href="https://github.com/neotypes/neotypes/pull/548" target="_blank">#548</a>)</h3>
+
+<p>In preparation for supporting <strong>Scala 3</strong>,
+we decided to move the <code class="highlighter-rouge">generic</code> package to its own module.<br />
+If you were using the generic derivation
+remember to add <code class="highlighter-rouge">neotypes-generic</code> as a new dependency.</p>
+
+<p>PS: This also means that now the <code class="highlighter-rouge">core</code> module does not longer depend on <strong>Shapeless</strong>.</p>
+
+<blockquote>
+  <p>Thanks to @tjarvstrand for tackling this!</p>
+</blockquote>
+
+<h3 id="fix-bug-using-readonlytransact-in-deferredqueryexecute-01383667433d29e2119170052b2a9b19eea32999">Fix bug using readOnlyTransact in DeferredQuery#execute (<a href="https://github.com/neotypes/neotypes/commit/01383667433d29e2119170052b2a9b19eea32999" target="_blank">01383667433d29e2119170052b2a9b19eea32999</a>)</h3>
+
+<p>We were using <code class="highlighter-rouge">Driver#readOnlyTransact</code> in the implementation of
+<code class="highlighter-rouge">DeferredQuery#execute(Driver[F], TransactionConfig)</code> by accident;
+which, obviously was wrong and was causing issues.</p>
+
+<p>This new release fixes it and correctly uses <code class="highlighter-rouge">Driver#transact</code> instead.</p>
+
+<blockquote>
+  <p>Apologies for the inconveniences this may have caused.</p>
+</blockquote>
+
 <h2 id="v0211-2022-07-12">v0.21.1 <em>(2022-07-12)</em></h2>
 
 <p>This release only updates dependencies.<br />
@@ -8,6 +35,10 @@ The most notable changes are:</p>
 <h3 id="update-zio-to-200-525">Update ZIO to 2.0.0 (<a href="https://github.com/neotypes/neotypes/pull/525" target="_blank">#525</a>)</h3>
 
 <p>The <strong>ZIO</strong> module of <strong>neotypes</strong> now uses the official <code class="highlighter-rouge">2.0.0</code> stable release.</p>
+
+<blockquote>
+  <p>Thanks to @masonedmison for initiating this PR <em>(again)</em>!</p>
+</blockquote>
 
 <h3 id="update-neo4j-java-driver-to-449-539">Update neo4j-java-driver to 4.4.9 (<a href="https://github.com/neotypes/neotypes/pull/539" target="_blank">#539</a>)</h3>
 
@@ -34,7 +65,12 @@ for more information check the <a href="https://neo4j.com/docs/api/java-driver/c
 but rather requires the a <code class="highlighter-rouge">2.x</code> release of the library.</p>
 
 <blockquote>
-  <p>Currently we depend on <code class="highlighter-rouge">2.0.0-RC6</code></p>
+  <p>This version uses <code class="highlighter-rouge">2.0.0-RC6</code>,
+check <code class="highlighter-rouge">0.21.1</code> <em>(or upwards)</em> for a release that depends on a stable release.</p>
+</blockquote>
+
+<blockquote>
+  <p>Thanks to @masonedmison for initiating this PR!</p>
 </blockquote>
 
 <h2 id="v0200-2022-03-31">v0.20.0 <em>(2022-03-31)</em></h2>

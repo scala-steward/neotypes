@@ -10,12 +10,16 @@
 
 <h2 id="session-creation">Session creation</h2>
 
-<p><strong>neotypes</strong> provides the <code class="highlighter-rouge">GraphDatabase</code> <strong>factory</strong> for creating a <strong>Neo4j</strong> <code class="highlighter-rouge">Driver</code>, which represents a connection with the Database.
+<p><strong>neotypes</strong> provides the <code class="highlighter-rouge">GraphDatabase</code> factory for creating a <strong>Neo4j</strong> <code class="highlighter-rouge">Driver</code>,
+which represents a connection with the Database.
 You can use this <code class="highlighter-rouge">Driver</code> to perform operations <em>(<code class="highlighter-rouge">Transactions</code>)</em> over the Database.<br />
-Those <strong>Scala</strong> classes are nothing more than simple wrappers over their <strong>Java</strong> counterparts, but providing a more <em>“Scala-friendly”</em> and functional API.</p>
+Those <strong>Scala</strong> classes are nothing more than simple wrappers over their <strong>Java</strong> counterparts,
+but providing a more <em>“Scala-friendly”</em> and functional API.</p>
 
-<p>You can create wrappers for any effectual type <em>(<code class="highlighter-rouge">F[_]</code>)</em> for which you have an implementation of the <code class="highlighter-rouge">neotypes.Async</code> <strong>typeclass</strong> in scope.
-The implementation for <code class="highlighter-rouge">scala.concurrent.Future</code> is built-in in the core module <em>(for other types, please read <a href="alternative_effects">alternative effects</a>)</em>.</p>
+<p>You can create wrappers for any effect type <em>(<code class="highlighter-rouge">F[_]</code>)</em>
+for which you have an implementation of the <code class="highlighter-rouge">neotypes.Async</code> typeclass in scope.
+The implementation for <code class="highlighter-rouge">scala.concurrent.Future</code> is built-in
+in the <code class="highlighter-rouge">core</code> module <em>(for other types, please read <a href="alternative_effects">alternative effects</a>)</em>.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.GraphDatabase</span>
 <span class="k">import</span> <span class="nn">neotypes.generic.auto._</span> <span class="c1">// Allows to automatically derive an implicit ResultMapper for case classes. // Allows to automatically derive an implicit ResultMapper for case classes.</span>
@@ -31,16 +35,23 @@ The implementation for <code class="highlighter-rouge">scala.concurrent.Future</
 <span class="k">val</span> <span class="nv">result</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">Movie</span><span class="o">]]</span> <span class="k">=</span>
   <span class="s">"""MATCH (movie: Movie)
      WHERE lower(movie.title) CONTAINS "thing"
-     RETURN movie"""</span><span class="o">.</span><span class="py">readOnlyQuery</span><span class="o">[</span><span class="kt">Movie</span><span class="o">].</span><span class="py">list</span><span class="o">(</span><span class="n">driver</span><span class="o">)</span>
+     RETURN movie
+  """</span><span class="o">.</span><span class="py">readOnlyQuery</span><span class="o">[</span><span class="kt">Movie</span><span class="o">].</span><span class="py">list</span><span class="o">(</span><span class="n">driver</span><span class="o">)</span>
 </code></pre></div></div>
 
-<p>Please remember that, you have to make sure that the <code class="highlighter-rouge">Driver</code> is properly closed at the end of the application execution, to make sure all obtained resources <em>(such as network connections)</em> are cleaned up properly.<br />
-<strong>Note</strong>: for other effect types instead of <code class="highlighter-rouge">Future</code> <em>(e.g. <code class="highlighter-rouge">IO</code>)</em>, the creation of the <code class="highlighter-rouge">Driver</code> will be managed by the effect specific implementation of <strong>Resource</strong>; which usually ensures it is properly closed after its use.</p>
+<p>Please remember that, you have to make sure that the <code class="highlighter-rouge">Driver</code> is properly closed
+at the end of the application execution,
+to make sure all obtained resources <em>(such as network connections)</em> are cleaned up properly.<br />
+<strong>Note</strong>: for other effect types instead of <code class="highlighter-rouge">Future</code> <em>(e.g. <code class="highlighter-rouge">IO</code>)</em>,
+the creation of the <code class="highlighter-rouge">Driver</code> will be managed by the effect specific implementation of <code class="highlighter-rouge">Resource</code>;
+which usually ensures it is properly closed after its use.</p>
 
 <h2 id="query-execution">Query execution</h2>
 
 <p>Once you have a <code class="highlighter-rouge">Driver</code> instance, you can start querying the database.
-The import <code class="highlighter-rouge">neotypes.implicits.syntax.all._</code> adds an extension method <code class="highlighter-rouge">query[T]</code> to each string literal in its scope, or you can use the cypher <em>(<code class="highlighter-rouge">c</code>)</em> string interpolator.</p>
+The import <code class="highlighter-rouge">neotypes.implicits.syntax.all._</code> adds an extension method <code class="highlighter-rouge">query[T]</code>
+to each string literal in its scope,
+or you can use the cypher <em>(<code class="highlighter-rouge">c</code>)</em> string interpolator.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.types.QueryParam</span>
 
@@ -68,16 +79,16 @@ The import <code class="highlighter-rouge">neotypes.implicits.syntax.all._</code
 <ul>
   <li><code class="highlighter-rouge">execute(driver)</code> - executes a query and discards its output, it can be parametrized by <code class="highlighter-rouge">org.neo4j.driver.v1.summary.ResultSummary</code> or <code class="highlighter-rouge">Unit</code>
 <em>(if you need to support a different type for this type of queries, you can provide an implementation of <code class="highlighter-rouge">ExecutionMapper</code>)</em>.</li>
-  <li><code class="highlighter-rouge">single(driver)</code> - runs a query and return a <strong>single</strong> result.</li>
-  <li><code class="highlighter-rouge">list(driver)</code> - runs a query and returns a <strong>List</strong> of results.</li>
-  <li><code class="highlighter-rouge">set(driver)</code> - runs a query and returns a <strong>Set</strong> of results.</li>
-  <li><code class="highlighter-rouge">vector(driver)</code> - runs a query and returns a <strong>Vector</strong> of results.</li>
-  <li><code class="highlighter-rouge">map(driver)</code> - runs a query and returns a <strong>Map</strong> of results
+  <li><code class="highlighter-rouge">single(driver)</code> - runs a query and return a single result.</li>
+  <li><code class="highlighter-rouge">list(driver)</code> - runs a query and returns a <code class="highlighter-rouge">List</code> of results.</li>
+  <li><code class="highlighter-rouge">set(driver)</code> - runs a query and returns a <code class="highlighter-rouge">Set</code> of results.</li>
+  <li><code class="highlighter-rouge">vector(driver)</code> - runs a query and returns a <code class="highlighter-rouge">Vector</code> of results.</li>
+  <li><code class="highlighter-rouge">map(driver)</code> - runs a query and returns a <code class="highlighter-rouge">Map</code> of results
 <em>(only if the elements are tuples)</em>.</li>
-  <li><code class="highlighter-rouge">collectAs(Col)(driver)</code> - runs a query and returns a <strong>Col</strong> of results
+  <li><code class="highlighter-rouge">collectAs(Col)(driver)</code> - runs a query and returns a <code class="highlighter-rouge">Col</code> of results
 <em>(where <strong>Col</strong> is any kind of collection)</em>.
 If you are in <code class="highlighter-rouge">2.12</code> or you are cross-compiling with <code class="highlighter-rouge">2.12</code> you need to import <code class="highlighter-rouge">neotypes.implicits.mappers.collections._</code> or you can import <code class="highlighter-rouge">scala.collection.compat._</code>.</li>
-  <li><code class="highlighter-rouge">stream(driver)</code> - runs a query and returns a <strong>Stream</strong> of results
+  <li><code class="highlighter-rouge">stream(driver)</code> - runs a query and returns a <code class="highlighter-rouge">Stream </code>of results
 <em>(for more information, please read <a href="streams">streaming</a>)</em>.</li>
 </ul>
 

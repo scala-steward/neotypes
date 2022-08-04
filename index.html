@@ -11,72 +11,80 @@
 
 <h1 id="neotypes">neotypes</h1>
 
-<p><strong>Scala lightweight, type-safe, asynchronous driver (not opinionated on side-effect implementation) for neo4j</strong>.</p>
+<h2 id="scala-lightweight-type-safe-asynchronous-driver-not-opinionated-on-effect-systems-for-neo4j">Scala lightweight, type-safe, asynchronous driver <em>(not opinionated on effect systems)</em> for Neo4j</h2>
 
 <ul>
-  <li><strong>Scala</strong> - the driver provides you with support for all standard Scala types without the need to convert Scala &lt;-&gt; Java types back and forth and you can easily add your types.</li>
-  <li><strong>Lightweight</strong> - the driver depends on <code class="highlighter-rouge">Shapeless</code> and <code class="highlighter-rouge">Neo4j Java driver</code>.</li>
+  <li><strong>Scala</strong> - the driver provides you with support for all standard <strong>Scala</strong> types without the need to convert <strong>Scala</strong> &lt;-&gt; <strong>Java</strong> types back and forth and you can easily add support for your own types.</li>
+  <li><strong>Lightweight</strong> - the <code class="highlighter-rouge">core</code> module of the driver only depends the <strong>Neo4j Java driver</strong>, and the <code class="highlighter-rouge">generic</code> module only depends on <strong>Shapeless</strong>.</li>
   <li><strong>Type-safe</strong> - the driver leverages <a href="https://blog.scalac.io/2017/04/19/typeclasses-in-scala.html">typeclasses</a> to derive all needed conversions at the compile time.</li>
-  <li><strong>Asynchronous</strong> - the driver sits on top of <a href="https://neo4j.com/blog/beta-release-java-driver-async-api-neo4j/">asynchronous Java driver</a>.</li>
-  <li><strong>Not opinionated on side-effect implementation</strong> - you can use it with any implementation of side-effects of your chose (scala.Future, cats-effect IO, Monix Task, etc) by implementing a simple typeclass. <code class="highlighter-rouge">scala.Future</code> is implemented and comes out of the box.</li>
+  <li><strong>Asynchronous</strong> - the driver sits on top of <a href="https://neo4j.com/blog/beta-release-java-driver-async-api-neo4j/">asynchronous <strong>Java</strong> driver</a>.</li>
+  <li><strong>Not opinionated on side-effect implementation</strong> - you can use it with any effect system of your preference <em>(<code class="highlighter-rouge">Future</code>, <strong>typelevel</strong>, <strong>ZIO</strong>, <strong>Monix</strong>)</em> by implementing a simple typeclass.</li>
 </ul>
 
-<p>The project aims to provide seamless integration with most popular scala infrastructures such as Lightbend (Akka, Akka-http, Lagom, etc), Typelevel (cats, http4s, etc), Twitter (finch, etc)…</p>
-
-<h2 id="setup">Setup</h2>
+<h3 id="setup">Setup</h3>
 
 <p>:warning: The library is under heavy development. Production use is at your own risk and is not recommended. :warning:</p>
 
 <table class="table">
+  <thead>
+    <tr>
+      <th>Supports Scala 2.12 and 2.13</th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-core" % version</code></td>
-      <td>core functionality. Supports <code class="highlighter-rouge">scala.concurrent.Future</code>.</td>
+      <td style="text-align: left">core functionality. Supports <code class="highlighter-rouge">scala.concurrent.Future</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-generic" % version</code></td>
+      <td style="text-align: left">auto &amp; semiauto derivation of mappers for case classes.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-cats-effect" % version</code></td>
-      <td><code class="highlighter-rouge">cats.effect.Async[F]</code> implementation.</td>
+      <td style="text-align: left"><code class="highlighter-rouge">cats.effect.Async[F]</code> implementation.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-monix" % version</code></td>
-      <td><code class="highlighter-rouge">monix.eval.Task</code> implementation.</td>
+      <td style="text-align: left"><code class="highlighter-rouge">monix.eval.Task</code> implementation.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-zio" % version</code></td>
-      <td><code class="highlighter-rouge">zio.Task</code> implementation.</td>
+      <td style="text-align: left"><code class="highlighter-rouge">zio.Task</code> implementation.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-akka-stream" % version</code></td>
-      <td>result streaming for Akka Streams.</td>
+      <td style="text-align: left">result streaming for Akka Streams.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-fs2-stream" % version</code></td>
-      <td>result streaming for FS2.</td>
+      <td style="text-align: left">result streaming for FS2.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-monix-stream" % version</code></td>
-      <td>result streaming for Monix Observables.</td>
+      <td style="text-align: left">result streaming for Monix Observables.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-zio-stream" % version</code></td>
-      <td>result streaming for ZIO ZStreams.</td>
+      <td style="text-align: left">result streaming for ZIO ZStreams.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-refined" % version</code></td>
-      <td>support to insert and retrieve refined values.</td>
+      <td style="text-align: left">support to insert and retrieve refined values.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-cats-data" % version</code></td>
-      <td>support to insert and retrieve <code class="highlighter-rouge">cats.data</code> values.</td>
+      <td style="text-align: left">support to insert and retrieve <code class="highlighter-rouge">cats.data</code> values.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">"io.github.neotypes" %% "neotypes-enumeratum" % version</code></td>
-      <td>support to insert and retrieve Enumeratum enums.</td>
+      <td style="text-align: left">support to insert and retrieve Enumeratum enums.</td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="showcase">Showcase</h2>
+<h3 id="showcase">Showcase</h3>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">neotypes.GraphDatabase</span>
 <span class="k">import</span> <span class="nn">neotypes.generic.auto._</span>
