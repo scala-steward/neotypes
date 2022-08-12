@@ -30,7 +30,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span>
   <span class="n">c</span><span class="s">"CREATE (a: Test { name: ${name}, "</span> <span class="o">+</span>
   <span class="n">c</span><span class="s">"born: ${born} })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@3f72bb4d</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@2008ab7f</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res3: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: Test { name: $p1, born: $p2 })",</span>
@@ -43,7 +43,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">LABEL</span> <span class="k">=</span> <span class="s">"User"</span>
 <span class="c1">// LABEL: String = "User"</span>
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (a: "</span> <span class="o">+</span> <span class="nc">LABEL</span> <span class="o">+</span> <span class="n">c</span><span class="s">"{ name: $name })"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@28243edc</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@70630ed6</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res4: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (a: User { name: $p1 })",</span>
@@ -111,7 +111,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// hasCat: HasCat = HasCat(2010)</span>
 
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@2d0cecd4</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@5ffa34c9</span>
 <span class="nv">query1</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 <span class="c1">// res10: neotypes.DeferredQuery[Unit] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })",</span>
@@ -122,7 +122,7 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">query2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"CREATE (u: User { $user })-[r: HAS_CAT { $hasCat }]-&gt;(c: Cat { $cat }) RETURN r"</span>
-<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@5beb4259</span>
+<span class="c1">// query2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@79d7b48d</span>
 <span class="nv">query2</span><span class="o">.</span><span class="py">query</span><span class="o">[</span><span class="kt">HasCat</span><span class="o">]</span>
 <span class="c1">// res11: neotypes.DeferredQuery[HasCat] = DeferredQuery(</span>
 <span class="c1">//   "CREATE (u: User { name: $p1, born: $p2 })-[r: HAS_CAT { since: $p3 }]-&gt;(c: Cat { tag: $p4 }) RETURN r",</span>
@@ -143,21 +143,21 @@ You can concatenate <code class="highlighter-rouge">DeferredQueryBuilder</code>s
 <span class="k">val</span> <span class="nv">subQuery1Param</span> <span class="k">=</span> <span class="mi">1</span>
 <span class="c1">// subQuery1Param: Int = 1</span>
 <span class="k">val</span> <span class="nv">subQuery1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"user.id = ${subQuery1Param}"</span>
-<span class="c1">// subQuery1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@71e922ba</span>
+<span class="c1">// subQuery1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@1ce1bb9b</span>
 <span class="k">val</span> <span class="nv">subQuery2Param</span> <span class="k">=</span> <span class="s">"Luis"</span>
 <span class="c1">// subQuery2Param: String = "Luis"</span>
 <span class="k">val</span> <span class="nv">subQuery2</span> <span class="k">=</span> <span class="n">c</span><span class="s">"user.name = ${subQuery2Param}"</span>
-<span class="c1">// subQuery2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@78322085</span>
+<span class="c1">// subQuery2: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@749c136f</span>
 <span class="k">val</span> <span class="nv">query1</span> <span class="k">=</span> <span class="n">c</span><span class="s">"MATCH (user: User) WHERE ${subQuery1} OR ${subQuery2} RETURN user"</span>
-<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@3212091b</span>
+<span class="c1">// query1: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@7ace3d49</span>
 
 <span class="c1">// Sub.query with a sub-query.</span>
 <span class="k">val</span> <span class="nv">subSubQueryParam</span> <span class="k">=</span> <span class="mi">1</span>
 <span class="c1">// subSubQueryParam: Int = 1</span>
 <span class="k">val</span> <span class="nv">subSubQuery</span> <span class="k">=</span> <span class="n">c</span><span class="s">"user.id = ${subSubQueryParam}"</span>
-<span class="c1">// subSubQuery: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@336a7c8a</span>
+<span class="c1">// subSubQuery: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@3e799d41</span>
 <span class="k">val</span> <span class="nv">subQuery</span> <span class="k">=</span> <span class="n">c</span><span class="s">"""${subSubQuery} OR user.name = "Luis""""</span>
-<span class="c1">// subQuery: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@bae64af</span>
+<span class="c1">// subQuery: neotypes.DeferredQueryBuilder = neotypes.DeferredQueryBuilder@2f55d476</span>
 </code></pre></div></div>
 </div></div></section></main><footer id="site-footer"><div class="container"><div class="row"><div class="col-xs-6"><p>neotypes is designed and developed by <a href="" target="_blank" rel="noopener noreferrer">neotypes</a></p></div><div class="col-xs-6"><p class="text-right"><a href="https://github.com/neotypes/neotypes" target="_blank" rel="noopener noreferrer"><span class="fa fa-github"></span>View on GitHub</a></p></div></div><div class="row"><div class="col-xs-6"><p>Website built with <a href="https://47degrees.github.io/sbt-microsites/" target="_blank" rel="noopener noreferrer">sbt-microsites</a> - © 2019 <a href="https://www.47deg.com/" target="_blank" rel="noopener noreferrer">47 Degrees</a></p></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/neotypes/highlight/highlight.pack.js"></script><script src="/neotypes/lunr/lunr.js"></script><script>
 // For all code blocks, copy the language from the containing div
